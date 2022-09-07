@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>DPM</h1>
+    <AppBar />
     <ul>
       <PackageTile
         v-for="(item, i) in packages"
@@ -19,10 +19,12 @@
 </template>
 
 <script>
+import AppBar from '../components/AppBar.vue'
 import PackageTile from '../components/PackageTile.vue'
 export default {
   name: 'IndexPage',
   components: {
+    AppBar,
     PackageTile,
   },
   data() {
@@ -44,3 +46,14 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.home {
+  margin: 0;
+  padding: 0;
+  margin-top: 80px;
+  width: auto;
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+}
+</style>
