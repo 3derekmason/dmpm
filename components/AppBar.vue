@@ -9,7 +9,7 @@ export default {
   name: 'AppBar',
   data() {
     return {
-      title: 'DPM',
+      title: 'DMPM',
     }
   },
 }
