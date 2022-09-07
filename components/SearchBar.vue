@@ -1,0 +1,67 @@
+<template>
+  <div class="searchBar">
+    <h1>dnmp</h1>
+    <div class="search">
+      <input type="text" placeholder="Search packages" />
+      <button>Search</button>
+      <NuxtLink v-if="showAdmin" to="/login">Admin</NuxtLink>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'SearchBar',
+  data() {
+    return {
+      showAdmin: false,
+    }
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+h1 {
+  font-family: 'Courier New', Courier, monospace;
+}
+.searchBar {
+  width: 100vw;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 24px;
+  border: 1px solid orange;
+
+  .search {
+    width: 80%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+
+    input {
+      padding-left: 12px;
+      width: calc(100% - 112px);
+      height: 44px;
+      border: 1px solid transparent;
+      background: #dedede;
+    }
+    input:focus {
+      outline: none;
+      border: 1px solid #212121;
+    }
+
+    button {
+      border: none;
+      width: 112px;
+      height: 100%;
+      background: #212121;
+      color: #fafafa;
+      letter-spacing: 0.3px;
+      font-size: 0.875rem;
+      margin-right: 40px;
+    }
+  }
+}
+</style>

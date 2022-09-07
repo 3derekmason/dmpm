@@ -25,8 +25,5 @@ export default {
   display: flex;
   align-items: center;
   border: 1px solid red;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 </style>
