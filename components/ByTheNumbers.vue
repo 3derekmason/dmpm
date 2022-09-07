@@ -4,7 +4,7 @@
     <ul>
       <li>
         <p>Packages</p>
-        <h2>4</h2>
+        <h2>{{ packages.length }}</h2>
       </li>
       <li>
         <p>Downloads</p>
