@@ -3,7 +3,19 @@
     <AppBar />
     <SearchBar />
     <div class="homeView">
-      <div class="mainRow"></div>
+      <div class="mainRow">
+        <div class="packages">
+          <h3>All Libraries</h3>
+          <PackageTile
+            v-for="(item, i) in packages"
+            :key="i"
+            :name="item.name"
+            :version="item.version"
+            :npm="item.npmURL"
+            :github="item.githubURL"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -11,12 +23,12 @@
 <script>
 import AppBar from '../components/AppBar.vue'
 import SearchBar from '../components/SearchBar.vue'
-// import PackageTile from '../components/PackageTile.vue'
+import PackageTile from '../components/PackageTile.vue'
 export default {
   name: 'IndexPage',
   components: {
     AppBar,
-    // PackageTile,
+    PackageTile,
     SearchBar,
   },
   data() {
@@ -63,13 +75,19 @@ body {
   .homeView {
     width: 98%;
     height: calc(100% - 160px);
-    overflow-y: auto;
+    overflow: hidden;
 
     .mainRow {
       height: 70%;
       width: 100%;
       display: flex;
       border-bottom: 0.5px solid #21212180;
+
+      .packages {
+        width: 44%;
+        padding: 16px;
+        overflow: auto;
+      }
     }
   }
 }

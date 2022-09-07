@@ -1,13 +1,9 @@
 <template>
   <div class="tile">
     <p>{{ name }}</p>
-    <p>{{ description }}</p>
+    <NuxtLink :to="npm" target="_blank">NPM</NuxtLink>
+    <NuxtLink :to="github" target="_blank">SOURCE</NuxtLink>
     <p>{{ version }}</p>
-    <p>{{ downloads }}</p>
-    <a :href="npm" target="_blank">View on NPM</a>
-    <a :href="github" target="_blank">View on Github</a>
-    <p>{{ created }}</p>
-    <p>{{ updated }}</p>
   </div>
 </template>
 
@@ -57,12 +53,10 @@ export default {
 
 <style lang="scss" scoped>
 .tile {
-  border: 1px solid blue;
-  border-radius: 8px;
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   gap: 4px;
 }
 </style>
