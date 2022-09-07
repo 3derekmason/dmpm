@@ -15,6 +15,7 @@
             :github="item.githubURL"
           />
         </div>
+        <ByTheNumbers />
       </div>
     </div>
   </div>
@@ -22,12 +23,14 @@
 
 <script>
 import AppBar from '../components/AppBar.vue'
+import ByTheNumbers from '../components/ByTheNumbers.vue'
 import SearchBar from '../components/SearchBar.vue'
 import PackageTile from '../components/PackageTile.vue'
 export default {
   name: 'IndexPage',
   components: {
     AppBar,
+    ByTheNumbers,
     PackageTile,
     SearchBar,
   },
