@@ -1,6 +1,6 @@
 <template>
   <div class="searchBar">
-    <h1>dnmp</h1>
+    <h1>dmpm</h1>
     <div class="search">
       <input type="text" placeholder="Search packages" />
       <button>Search</button>
@@ -22,17 +22,20 @@ export default {
 
 <style lang="scss" scoped>
 h1 {
-  font-family: 'Courier New', Courier, monospace;
+  margin-left: 16px;
+  font-family: 'Red Hat Mono', monospace;
+  font-weight: 700;
+  letter-spacing: 0.8px;
 }
 .searchBar {
   width: 100vw;
-  height: 80px;
+  height: 64px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 40px;
   padding: 24px;
-  border: 1px solid orange;
+  box-shadow: 0 4px 4px #dedede;
 
   .search {
     width: 80%;
@@ -46,6 +49,7 @@ h1 {
       height: 44px;
       border: 1px solid transparent;
       background: #dedede;
+      font-family: 'Red Hat Mono', monospace;
     }
     input:focus {
       outline: none;
@@ -61,6 +65,7 @@ h1 {
       letter-spacing: 0.3px;
       font-size: 0.875rem;
       margin-right: 40px;
+      cursor: pointer;
     }
   }
 }
