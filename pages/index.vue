@@ -16,7 +16,7 @@
           />
         </div>
         <DiscoverPackages />
-        <ByTheNumbers />
+        <ByTheNumbers :packages="packages" />
       </div>
     </div>
   </div>

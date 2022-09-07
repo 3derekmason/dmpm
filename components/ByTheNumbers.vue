@@ -8,7 +8,7 @@
       </li>
       <li>
         <p>Downloads</p>
-        <h2>{{ total }}</h2>
+        <h2>{{ getTotal(packages) }}</h2>
       </li>
     </ul>
   </div>
@@ -17,10 +17,22 @@
 <script>
 export default {
   name: 'ByTheNumbers',
-  data() {
-    return {
-      total: 0,
-    }
+  props: {
+    packages: {
+      type: Array,
+      default: () => {
+        return []
+      },
+    },
+  },
+  methods: {
+    getTotal(array) {
+      let total = 0
+      array.forEach((item) => {
+        total += Number(item.downloads)
+      })
+      return total === 0 ? '--' : total
+    },
   },
 }
 </script>
