@@ -55,7 +55,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .tile {
   border: 1px solid blue;
   border-radius: 8px;
