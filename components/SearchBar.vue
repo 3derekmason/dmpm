@@ -2,7 +2,7 @@
   <div class="searchBar">
     <h1>dmpm</h1>
     <div class="search">
-      <input type="text" placeholder="Search packages" />
+      <input type="text" placeholder="Search packages..." />
       <button>Search</button>
       <NuxtLink v-if="showAdmin" to="/login">Admin</NuxtLink>
     </div>

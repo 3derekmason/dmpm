@@ -5,7 +5,7 @@
     <div class="homeView">
       <div class="mainRow">
         <div class="packages">
-          <h3>All Libraries</h3>
+          <h3><span class="material-icons"> library_books </span> Libraries</h3>
           <PackageTile
             v-for="(item, i) in packages"
             :key="i"
@@ -84,9 +84,19 @@ body {
       border-bottom: 0.5px solid #21212180;
 
       .packages {
-        width: 44%;
+        width: 40%;
         padding: 16px;
         overflow: auto;
+
+        h3 {
+          font-weight: 400;
+          font-size: 20px;
+          width: 100%;
+          border-bottom: 2px solid #ff5722;
+          display: flex;
+          align-items: center;
+          gap: 4px;
+        }
       }
     }
   }
