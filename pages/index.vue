@@ -15,6 +15,7 @@
             :github="item.githubURL"
           />
         </div>
+        <DiscoverPackages />
         <ByTheNumbers />
       </div>
     </div>
@@ -24,6 +25,7 @@
 <script>
 import AppBar from '../components/AppBar.vue'
 import ByTheNumbers from '../components/ByTheNumbers.vue'
+import DiscoverPackages from '../components/DiscoverPackages.vue'
 import SearchBar from '../components/SearchBar.vue'
 import PackageTile from '../components/PackageTile.vue'
 export default {
@@ -31,6 +33,7 @@ export default {
   components: {
     AppBar,
     ByTheNumbers,
+    DiscoverPackages,
     PackageTile,
     SearchBar,
   },
