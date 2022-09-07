@@ -25,6 +25,7 @@ $grad: linear-gradient(35deg, #ff9800, #ff5722, #ff6f00, #ffc107);
   display: flex;
   align-items: center;
   border-top: 8px solid #ff9800;
-  border-bottom: 0.5px solid #12121280;
+  border-bottom: 0.5px solid #12121240;
+  background: #fafafa;
 }
 </style>

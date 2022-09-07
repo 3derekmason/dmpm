@@ -79,15 +79,18 @@ body {
   flex-direction: column;
 
   .homeView {
+    margin-top: 8px;
     width: 98%;
-    height: calc(100% - 160px);
+    height: calc(100% - 144px);
     overflow: hidden;
-
+    background: #fafafa;
+    border-radius: 4px;
+    border: 0.5px solid #21212150;
     .mainRow {
       height: 70%;
       width: 100%;
       display: flex;
-      border-bottom: 0.5px solid #21212180;
+      border-bottom: 0.5px solid #21212140;
 
       .packages {
         width: 40%;

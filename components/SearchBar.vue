@@ -28,13 +28,14 @@ h1 {
   letter-spacing: 0.8px;
 }
 .searchBar {
+  background: #fafafa;
   width: 100vw;
   height: 64px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 40px;
-  padding: 24px;
+  padding: 12px;
   box-shadow: 0 4px 4px #dedede;
 
   .search {
