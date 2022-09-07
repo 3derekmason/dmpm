@@ -1,6 +1,6 @@
 <template>
   <div class="tile">
-    <p>{{ name }}</p>
+    <p class="name">{{ name }}</p>
     <NuxtLink :to="npm" target="_blank">NPM</NuxtLink>
     <NuxtLink :to="github" target="_blank">SOURCE</NuxtLink>
     <p>{{ version }}</p>
@@ -55,8 +55,11 @@ export default {
 .tile {
   width: 90%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  gap: 4px;
+
+  p.name {
+    width: 160px;
+  }
 }
 </style>
