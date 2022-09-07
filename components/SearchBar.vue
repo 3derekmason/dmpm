@@ -1,6 +1,6 @@
 <template>
   <div class="searchBar">
-    <h1>dmpm</h1>
+    <img src="/dmpmword.png" width="120" />
     <div class="search">
       <input type="text" placeholder="Search packages..." />
       <button>Search</button>
