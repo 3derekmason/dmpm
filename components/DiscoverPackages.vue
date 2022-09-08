@@ -1,18 +1,36 @@
 <template>
   <div class="discover">
     <h3><span class="material-icons">pageview</span>Discover packages</h3>
+    <div class="filters">
+      <span v-for="(filter, i) in filters" :key="i">
+        <button>
+          <span class="material-icons">{{ filter.icon }}</span>
+          {{ filter.name }}
+        </button>
+      </span>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'DiscoverPackages',
+  data() {
+    return {
+      filters: [
+        { name: 'Front-End', icon: 'integration_instructions' },
+        { name: 'Back-End', icon: 'terminal' },
+        { name: 'Styling', icon: 'format_paint' },
+        { name: 'Math', icon: 'calculate' },
+      ],
+    }
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 .discover {
-  width: 30%;
+  width: 35%;
   padding: 16px;
   height: 100%;
 
@@ -24,6 +42,48 @@ export default {
     display: flex;
     align-items: center;
     gap: 4px;
+  }
+  .filters {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    span {
+      width: 46%;
+      height: 64px;
+      .material-icons {
+        width: auto;
+        display: flex;
+        align-items: center;
+      }
+      align-items: center;
+
+      button {
+        border-radius: 2px;
+        padding-left: 16px;
+        padding-right: 16px;
+        width: 100%;
+        height: 100%;
+        border: 0.5px solid #21212120;
+        background: none;
+        box-shadow: 0 1px 0 #21212140;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+      }
+
+      button:hover {
+        background: #fefefe;
+        cursor: pointer;
+      }
+      button:active {
+        box-shadow: none;
+        transform: translate(1px 0px);
+      }
+    }
   }
 }
 </style>

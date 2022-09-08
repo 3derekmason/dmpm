@@ -43,7 +43,7 @@ ul {
   width: 100%;
 }
 .stats {
-  width: 30%;
+  width: 25%;
   padding: 16px;
   height: 100%;
 
