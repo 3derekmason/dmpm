@@ -5,7 +5,9 @@
       <div class="head">
         <NuxtLink to="/"> <img src="/dmpmword.png" width="120" /></NuxtLink>
         <h1>{{ currentPackage.name }}</h1>
-        <p>Published {{ timeAgo }}</p>
+        <p>
+          Published {{ relativeTimeAgo(currentPackage.published, 'month') }}
+        </p>
       </div>
       <p>{{ currentPackage.description }}</p>
     </div>
@@ -25,14 +27,13 @@ export default {
     return {
       currentPackage: {},
       path: '',
-      timeAgo: '',
     }
   },
-  mounted() {
-    this.timeAgo = relativeTimeAgo(new Date(), 'month')
-    this.getCurrentData()
+  async mounted() {
+    await this.getCurrentData()
   },
   methods: {
+    relativeTimeAgo,
     getCurrentData() {
       const name = this.$route.path.split('/')[2]
       fetch(`https://dev-mail.vercel.app/api/package/${name}`)
