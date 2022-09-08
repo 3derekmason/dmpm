@@ -2,6 +2,7 @@
   <div class="package">
     <AppBar />
     <div class="packageView">
+      <NuxtLink to="/"> <img src="/dmpmword.png" width="120" /></NuxtLink>
       {{ currentPackage.name }}
       <p>{{ currentPackage.description }}</p>
     </div>

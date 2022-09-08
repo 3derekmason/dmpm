@@ -1,7 +1,19 @@
 <template>
   <div class="appbar">
     <DMPM />
-    <NuxtLink to="/about">About</NuxtLink>
+    <span class="nav">
+      <div v-if="$route.path !== '/about'">
+        <NuxtLink to="/about">About</NuxtLink>
+      </div>
+      <div v-if="$route.path !== '/'">
+        <span>
+          <NuxtLink to="/">Home </NuxtLink>
+          <NuxtLink to="/"
+            ><img src="/dmpm.png" alt="logo" width="40"
+          /></NuxtLink>
+        </span>
+      </div>
+    </span>
   </div>
 </template>
 
@@ -31,5 +43,18 @@ $grad: linear-gradient(35deg, #ff9800, #ff5722, #ff6f00, #ffc107);
   border-top: 8px solid #ff9800;
   border-bottom: 0.5px solid #12121240;
   background: #fafafa;
+
+  .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+    span {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+  }
 }
 </style>
