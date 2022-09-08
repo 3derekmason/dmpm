@@ -1,11 +1,13 @@
 <template>
   <div class="home">
     <AppBar />
-    <SearchBar :setSearch="setSearch" />
+    <SearchBar />
     <div class="homeView">
       <div class="mainRow">
         <div class="packages">
-          <h3><span class="material-icons"> library_books </span> Libraries</h3>
+          <h3>
+            <span class="material-icons"> library_books </span>{{ search }}
+          </h3>
           <PackageTile
             v-for="(item, i) in packages"
             :key="i"
@@ -23,11 +25,13 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 import AppBar from '../components/AppBar.vue'
 import ByTheNumbers from '../components/ByTheNumbers.vue'
 import DiscoverPackages from '../components/DiscoverPackages.vue'
 import SearchBar from '../components/SearchBar.vue'
 import PackageTile from '../components/PackageTile.vue'
+
 export default {
   name: 'IndexPage',
   components: {
@@ -41,8 +45,12 @@ export default {
     return {
       packages: [],
       filter: '',
-      search: '',
     }
+  },
+  computed: {
+    search() {
+      return this.$store.state.search
+    },
   },
   mounted() {
     this.getAllPackages()
@@ -58,9 +66,9 @@ export default {
     setFilter(string) {
       this.filter = string
     },
-    setSearch(string) {
-      this.search = string
-    },
+    ...mapMutations({
+      setSearch: 'setSearch',
+    }),
   },
 }
 </script>

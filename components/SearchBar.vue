@@ -2,7 +2,11 @@
   <div class="searchBar">
     <NuxtLink to="/"> <img src="/dmpmword.png" width="120" /></NuxtLink>
     <div class="search">
-      <input type="text" placeholder="Search packages..." />
+      <input
+        type="text"
+        placeholder="Search packages..."
+        @input="handleChange"
+      />
       <button>Search</button>
       <NuxtLink v-if="showAdmin" to="/auth">Admin</NuxtLink>
     </div>
@@ -10,18 +14,28 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
   name: 'SearchBar',
-  props: {
-    setSearch: {
-      type: Function,
-      default: null,
-    },
-  },
   data() {
     return {
       showAdmin: false,
     }
+  },
+  computed: {
+    search() {
+      return this.$store.state.search
+    },
+  },
+  methods: {
+    ...mapMutations({
+      setSearch: 'setSearch',
+    }),
+    handleChange(e) {
+      console.log(this.search)
+      this.setSearch(e.target.value)
+    },
   },
 }
 </script>
