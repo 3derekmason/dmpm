@@ -4,7 +4,7 @@
     <div class="search">
       <input type="text" placeholder="Search packages..." />
       <button>Search</button>
-      <NuxtLink v-if="showAdmin" to="/login">Admin</NuxtLink>
+      <NuxtLink v-if="showAdmin" to="/auth">Admin</NuxtLink>
     </div>
   </div>
 </template>
