@@ -2,8 +2,11 @@
   <div class="package">
     <AppBar />
     <div class="packageView">
-      <NuxtLink to="/"> <img src="/dmpmword.png" width="120" /></NuxtLink>
-      {{ currentPackage.name }}
+      <div class="head">
+        <NuxtLink to="/"> <img src="/dmpmword.png" width="120" /></NuxtLink>
+        <h1>{{ currentPackage.name }}</h1>
+        <p>Published</p>
+      </div>
       <p>{{ currentPackage.description }}</p>
     </div>
   </div>
@@ -55,11 +58,34 @@ export default {
   .packageView {
     margin-top: 8px;
     width: 98%;
-    height: calc(100% - 80px);
+    height: calc(100% - 72px);
     overflow: hidden;
     background: #fafafa;
     border-radius: 4px;
     border: 0.5px solid #21212150;
+
+    .head {
+      padding-left: 80px;
+      padding-right: 80px;
+      width: 100%;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      box-shadow: 0 4px 4px #dedede;
+
+      h1 {
+        font-weight: 400;
+        font-size: 48px;
+        background: -webkit-linear-gradient(35deg, #ff5722, #ff6f00, #d50000);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      p {
+        color: #323232;
+        font-family: 'Red Hat Mono', monospace;
+      }
+    }
   }
 }
 </style>
