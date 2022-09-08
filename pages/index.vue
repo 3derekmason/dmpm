@@ -4,7 +4,7 @@
     <SearchBar :searchPackages="searchPackages" />
     <div class="homeView">
       <div class="mainRow">
-        <div class="packages">
+        <div v-if="packages" class="packages">
           <h3 v-if="!search">
             <span class="material-icons"> library_books </span>Libraries
           </h3>

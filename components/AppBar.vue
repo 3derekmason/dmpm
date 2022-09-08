@@ -2,17 +2,12 @@
   <div class="appbar">
     <DMPM />
     <span class="nav">
-      <div v-if="$route.path !== '/about'">
-        <NuxtLink to="/about">About</NuxtLink>
-      </div>
       <div v-if="$route.path !== '/'">
         <span>
           <NuxtLink to="/">Home </NuxtLink>
-          <NuxtLink to="/"
-            ><img src="/dmpm.png" alt="logo" width="40"
-          /></NuxtLink>
         </span>
       </div>
+      <NuxtLink to="/"><img src="/dmpm.png" alt="logo" width="32" /></NuxtLink>
     </span>
   </div>
 </template>
