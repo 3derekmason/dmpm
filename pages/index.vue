@@ -64,6 +64,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
+
+  h3 {
+    padding-bottom: 16px;
+  }
 }
 .home {
   box-sizing: border-box;
@@ -98,8 +102,8 @@ body {
         overflow: auto;
 
         h3 {
-          font-weight: 400;
-          font-size: 20px;
+          font-weight: 300;
+          font-size: 18px;
           width: 100%;
           border-bottom: 2px solid #ff5722;
           display: flex;

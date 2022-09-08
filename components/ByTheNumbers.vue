@@ -48,8 +48,8 @@ ul {
   height: 100%;
 
   h3 {
-    font-weight: 400;
-    font-size: 20px;
+    font-weight: 300;
+    font-size: 18px;
     width: 100%;
     border-bottom: 2px solid #ff6f00;
     display: flex;
@@ -64,9 +64,11 @@ ul {
     p {
       font-size: 14px;
       margin: 0;
+      font-weight: 200;
     }
     h2 {
       font-size: 32px;
+      font-weight: 300;
       margin: 0;
       padding: 0;
     }

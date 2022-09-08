@@ -17,8 +17,8 @@ export default {
   height: 100%;
 
   h3 {
-    font-weight: 400;
-    font-size: 20px;
+    font-weight: 300;
+    font-size: 18px;
     width: 100%;
     border-bottom: 2px solid #ffd600;
     display: flex;

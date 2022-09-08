@@ -25,10 +25,10 @@ export default {
     cursor: pointer;
   }
   h4 {
-    font-size: 16px;
+    font-size: 14px;
     letter-spacing: 0.4px;
     font-family: 'Red Hat Mono', monospace;
-    font-weight: 400;
+    font-weight: 500;
   }
 }
 </style>
