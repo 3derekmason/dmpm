@@ -1,12 +1,16 @@
 <template>
   <div class="home">
     <AppBar />
-    <SearchBar />
+    <SearchBar :searchPackages="searchPackages" />
     <div class="homeView">
       <div class="mainRow">
         <div class="packages">
-          <h3>
-            <span class="material-icons"> library_books </span>{{ search }}
+          <h3 v-if="!search">
+            <span class="material-icons"> library_books </span>Libraries
+          </h3>
+          <h3 v-else>
+            <span class="material-icons"> library_books </span>Filtered
+            Libraries
           </h3>
           <PackageTile
             v-for="(item, i) in packages"
@@ -62,6 +66,19 @@ export default {
         .then((data) => {
           this.packages = JSON.parse(data.message)
         })
+    },
+    searchPackages() {
+      if (!this.search) {
+        this.getAllPackages()
+      } else {
+        const filtered = []
+        this.packages.forEach((item) => {
+          if (JSON.stringify(item).includes(this.search)) {
+            filtered.push(item)
+          }
+          this.packages = filtered
+        })
+      }
     },
     setFilter(string) {
       this.filter = string

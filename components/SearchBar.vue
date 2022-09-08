@@ -7,7 +7,7 @@
         placeholder="Search packages..."
         @input="handleChange"
       />
-      <button>Search</button>
+      <button @click="searchPackages">Search</button>
       <NuxtLink v-if="showAdmin" to="/auth">Admin</NuxtLink>
     </div>
   </div>
@@ -18,6 +18,14 @@ import { mapMutations } from 'vuex'
 
 export default {
   name: 'SearchBar',
+  props: {
+    searchPackages: {
+      type: Function,
+      default: () => {
+        return this.search
+      },
+    },
+  },
   data() {
     return {
       showAdmin: false,
@@ -33,8 +41,8 @@ export default {
       setSearch: 'setSearch',
     }),
     handleChange(e) {
-      console.log(this.search)
       this.setSearch(e.target.value)
+      this.searchPackages()
     },
   },
 }
