@@ -5,7 +5,7 @@
       <div class="head">
         <NuxtLink to="/"> <img src="/dmpmword.png" width="120" /></NuxtLink>
         <h1>{{ currentPackage.name }}</h1>
-        <p>Published</p>
+        <p>Published {{ timeAgo }}</p>
       </div>
       <p>{{ currentPackage.description }}</p>
     </div>
@@ -13,7 +13,9 @@
 </template>
 
 <script>
+import relativeTimeAgo from 'relative-time-ago'
 import AppBar from '../../components/AppBar.vue'
+
 export default {
   name: 'PackageView',
   components: {
@@ -23,9 +25,11 @@ export default {
     return {
       currentPackage: {},
       path: '',
+      timeAgo: '',
     }
   },
   mounted() {
+    this.timeAgo = relativeTimeAgo(new Date(), 'month')
     this.getCurrentData()
   },
   methods: {
@@ -71,7 +75,7 @@ export default {
       height: 80px;
       display: flex;
       align-items: center;
-      gap: 80px;
+      gap: 40px;
       box-shadow: 0 4px 4px #dedede;
 
       h1 {
