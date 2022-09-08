@@ -2,10 +2,10 @@
   <div class="discover">
     <h3><span class="material-icons">pageview</span>Discover packages</h3>
     <div class="filters">
-      <span v-for="(filter, i) in filters" :key="i">
-        <button @click="setFilter(filter.name)">
-          <span class="material-icons">{{ filter.icon }}</span>
-          {{ filter.name }}
+      <span v-for="(item, i) in filters" :key="i">
+        <button @click="handleClick(item.name)">
+          <span class="material-icons">{{ item.icon }}</span>
+          {{ item.name }}
         </button>
       </span>
     </div>
@@ -13,13 +13,15 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
   name: 'DiscoverPackages',
   props: {
-    setFilter: {
+    filterPackages: {
       type: Function,
       default: () => {
-        return this.filters
+        return this.filter
       },
     },
   },
@@ -32,6 +34,20 @@ export default {
         { name: 'Math', icon: 'calculate' },
       ],
     }
+  },
+  computed: {
+    filter() {
+      return this.$store.state.filter
+    },
+  },
+  methods: {
+    ...mapMutations({
+      setFilter: 'setFilter',
+    }),
+    handleClick(string) {
+      this.setFilter(string)
+      this.filterPackages()
+    },
   },
 }
 </script>
