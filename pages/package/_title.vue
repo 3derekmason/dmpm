@@ -43,7 +43,24 @@
           >
         </div>
       </div>
-      <div class="info"></div>
+      <div class="info">
+        <div class="block">
+          <code>npm i {{ currentPackage.name }}</code>
+        </div>
+        <div class="block">
+          <p>Version</p>
+          <h2>{{ currentPackage.version }}</h2>
+        </div>
+        <div class="block">
+          <p>Total downloads</p>
+          <h2>{{ currentPackage.downloads }}</h2>
+        </div>
+
+        <div class="block">
+          <p>Published</p>
+          <h4>{{ new Date(currentPackage.published).toLocaleDateString() }}</h4>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -150,7 +167,7 @@ export default {
         padding: 2px;
         padding-left: 8px;
         padding-right: 8px;
-        background: #55555555;
+        background: #99999950;
         width: fit-content;
       }
       .row,
@@ -196,12 +213,29 @@ export default {
     }
 
     .info {
+      box-sizing: border-box;
       width: 33%;
       height: 100%;
-      background: #fafafa;
+      background: #fefefe;
       border-radius: 8px;
       margin-left: 32px;
       margin-right: 32px;
+      padding: 80px;
+      display: flex;
+      flex-direction: column;
+
+      code {
+        width: 100%;
+        padding: 8px;
+        background: #ff6f0020;
+      }
+      .block {
+        width: 100%;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
     }
   }
 }
