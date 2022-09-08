@@ -2,7 +2,8 @@
   <div class="package">
     <AppBar />
     <div class="packageView">
-      {{ $route.path }}
+      {{ currentPackage.name }}
+      <p>{{ currentPackage.description }}</p>
     </div>
   </div>
 </template>
@@ -17,13 +18,21 @@ export default {
   data() {
     return {
       currentPackage: {},
+      path: '',
     }
   },
   mounted() {
     this.getCurrentData()
   },
   methods: {
-    getCurrentData() {},
+    getCurrentData() {
+      const name = this.$route.path.split('/')[2]
+      fetch(`https://dev-mail.vercel.app/api/package/${name}`)
+        .then((res) => res.json())
+        .then((data) => {
+          this.currentPackage = JSON.parse(data)
+        })
+    },
   },
 }
 </script>
