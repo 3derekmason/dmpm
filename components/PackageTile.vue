@@ -1,8 +1,8 @@
 <template>
-  <div class="tile">
+  <NuxtLink class="tile" :to="`/package/${name}`">
     <p class="name">{{ name }}</p>
     <p>v{{ version }}</p>
-  </div>
+  </NuxtLink>
 </template>
 
 <script>
