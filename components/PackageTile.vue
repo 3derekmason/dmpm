@@ -1,9 +1,7 @@
 <template>
   <div class="tile">
     <p class="name">{{ name }}</p>
-    <NuxtLink :to="npm" target="_blank">NPM</NuxtLink>
-    <NuxtLink :to="github" target="_blank">SOURCE</NuxtLink>
-    <p>{{ version }}</p>
+    <p>v{{ version }}</p>
   </div>
 </template>
 
@@ -57,9 +55,15 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  transition: 0.1s;
 
   p.name {
     width: 160px;
   }
+}
+.tile:hover {
+  background: #efefef;
+  cursor: pointer;
+  transition: 0.1s;
 }
 </style>

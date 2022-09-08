@@ -12,6 +12,12 @@
 <script>
 export default {
   name: 'SearchBar',
+  props: {
+    setSearch: {
+      type: Function,
+      default: null,
+    },
+  },
   data() {
     return {
       showAdmin: false,

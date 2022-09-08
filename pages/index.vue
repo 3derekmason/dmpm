@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <AppBar />
-    <SearchBar />
+    <SearchBar :setSearch="setSearch" />
     <div class="homeView">
       <div class="mainRow">
         <div class="packages">
@@ -41,6 +41,7 @@ export default {
     return {
       packages: [],
       filter: '',
+      search: '',
     }
   },
   mounted() {
@@ -56,6 +57,9 @@ export default {
     },
     setFilter(string) {
       this.filter = string
+    },
+    setSearch(string) {
+      this.search = string
     },
   },
 }
