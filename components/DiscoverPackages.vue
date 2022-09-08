@@ -3,7 +3,7 @@
     <h3><span class="material-icons">pageview</span>Discover packages</h3>
     <div class="filters">
       <span v-for="(filter, i) in filters" :key="i">
-        <button>
+        <button @click="setFilter(filter.name)">
           <span class="material-icons">{{ filter.icon }}</span>
           {{ filter.name }}
         </button>
@@ -15,6 +15,14 @@
 <script>
 export default {
   name: 'DiscoverPackages',
+  props: {
+    setFilter: {
+      type: Function,
+      default: () => {
+        return this.filters
+      },
+    },
+  },
   data() {
     return {
       filters: [

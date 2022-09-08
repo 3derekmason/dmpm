@@ -15,7 +15,7 @@
             :github="item.githubURL"
           />
         </div>
-        <DiscoverPackages />
+        <DiscoverPackages :setFilter="setFilter" />
         <ByTheNumbers :packages="packages" />
       </div>
     </div>
@@ -40,6 +40,7 @@ export default {
   data() {
     return {
       packages: [],
+      filter: '',
     }
   },
   mounted() {
@@ -52,6 +53,9 @@ export default {
         .then((data) => {
           this.packages = JSON.parse(data.message)
         })
+    },
+    setFilter(string) {
+      this.filter = string
     },
   },
 }
