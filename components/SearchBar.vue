@@ -1,6 +1,6 @@
 <template>
   <div class="searchBar">
-    <img src="/dmpmword.png" width="120" />
+    <NuxtLink to="/"> <img src="/dmpmword.png" width="120" /></NuxtLink>
     <div class="search">
       <input type="text" placeholder="Search packages..." />
       <button>Search</button>
