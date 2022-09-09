@@ -239,4 +239,50 @@ export default {
     }
   }
 }
+
+@media (max-width: 800px) {
+  .package {
+    .head {
+      img {
+        height: 60px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+
+    .packageView {
+      max-width: 100%;
+      flex-direction: column;
+      height: auto;
+      overflow: auto;
+      padding: 2px;
+      overflow-x: hidden;
+      .main {
+        width: 98%;
+        code {
+          width: auto;
+          max-width: 90%;
+        }
+
+        .desc {
+          padding: 4px;
+        }
+        .row {
+          gap: 16px;
+          a {
+            width: 40%;
+          }
+        }
+      }
+      .info {
+        width: 98%;
+        margin: 0;
+        margin-left: 4px;
+        padding: 16px;
+        border: 0.5px solid #d50000;
+      }
+    }
+  }
+}
 </style>

@@ -52,4 +52,11 @@ $grad: linear-gradient(35deg, #ff9800, #ff5722, #ff6f00, #ffc107);
     }
   }
 }
+
+@media (max-width: 800px) {
+  .appbar {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
 </style>

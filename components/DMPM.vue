@@ -31,4 +31,14 @@ export default {
     font-weight: 500;
   }
 }
+
+@media (max-width: 800px) {
+  .dmpm {
+    h4 {
+      font-size: 12px;
+      letter-spacing: 0.2px;
+      font-weight: 400;
+    }
+  }
+}
 </style>
