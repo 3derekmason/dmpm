@@ -40,16 +40,24 @@ export default {
 
 <style lang="scss" scoped>
 .dmpm {
-  button {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
   h4 {
     font-size: 14px;
     letter-spacing: 0.4px;
     font-family: 'Red Hat Mono', monospace;
-    font-weight: 500;
+    font-weight: 400;
+  }
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  button:hover {
+    color: #ababab;
+    transition: 0.4s;
+  }
+  button:active {
+    opacity: 1;
   }
 }
 
