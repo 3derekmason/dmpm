@@ -1,6 +1,6 @@
 <template>
   <div class="dmpm">
-    <button>
+    <button @click="changeMessage">
       <h4>{{ message }}</h4>
     </button>
   </div>
@@ -11,8 +11,29 @@ export default {
   name: 'DNPM',
   data() {
     return {
-      message: 'Derek Mason Package Manager',
+      messages: [
+        'Derek Mason Package Manager',
+        "Don't Mix Porridge Maniacally",
+        'Developer Music per Mozart',
+        'Deep Mud Paints Mosaics',
+        'Devs Mostly Prefer Machines',
+        'Deceitful Media Poisons Memory',
+        'Drop Master, Push Main',
+      ],
+      message: '',
     }
+  },
+  mounted() {
+    this.message = this.messages[0]
+  },
+  methods: {
+    changeMessage() {
+      let random = Math.floor(Math.random() * this.messages.length)
+      if (this.message === this.messages[random]) {
+        random = Math.floor(Math.Random() * this.messages.length)
+      }
+      this.message = this.messages[random]
+    },
   },
 }
 </script>
