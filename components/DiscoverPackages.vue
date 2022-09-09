@@ -97,6 +97,7 @@ export default {
         align-items: center;
         justify-content: center;
         gap: 4px;
+        color: #212121;
       }
 
       button:hover {

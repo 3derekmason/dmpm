@@ -34,6 +34,7 @@ export default {
 
 @media (max-width: 800px) {
   .dmpm {
+    color: #212121;
     h4 {
       font-size: 12px;
       letter-spacing: 0.2px;

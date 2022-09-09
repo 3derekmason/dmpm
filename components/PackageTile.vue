@@ -56,6 +56,7 @@ export default {
   justify-content: space-around;
   align-items: center;
   transition: 0.1s;
+  color: #212121;
 
   p.name {
     width: 160px;
