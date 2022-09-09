@@ -3,9 +3,10 @@
     <DMPM />
     <span class="nav">
       <div v-if="$route.path !== '/'">
-        <span>
-          <NuxtLink to="/">Home </NuxtLink>
-        </span>
+        <NuxtLink to="/">Home </NuxtLink>
+      </div>
+      <div v-if="$route.path !== '/about'">
+        <NuxtLink to="/about">About </NuxtLink>
       </div>
       <NuxtLink to="/"><img src="/dmpm.png" alt="logo" width="32" /></NuxtLink>
     </span>
