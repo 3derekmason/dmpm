@@ -15,7 +15,7 @@ export default {
         'Derek Mason Package Manager',
         "Don't Mix Porridge Maniacally",
         'Developer Music per Mozart',
-        'Deep Mud Paints Mosaics',
+        'Deep Mud, Pretty Mosaics',
         'Devs Mostly Prefer Machines',
         'Deceitful Media Poisons Memory',
         'Drop Master, Push Main',
@@ -30,7 +30,7 @@ export default {
     changeMessage() {
       let random = Math.floor(Math.random() * this.messages.length)
       if (this.message === this.messages[random]) {
-        random = Math.floor(Math.Random() * this.messages.length)
+        random = Math.floor(Math.random() * this.messages.length)
       }
       this.message = this.messages[random]
     },
