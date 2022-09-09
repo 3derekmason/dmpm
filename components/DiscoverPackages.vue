@@ -110,4 +110,9 @@ export default {
     }
   }
 }
+@media (max-width: 800px) {
+  .discover {
+    width: 100%;
+  }
+}
 </style>

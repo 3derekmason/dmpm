@@ -158,4 +158,24 @@ body {
     }
   }
 }
+
+@media (max-width: 800px) {
+  .homeView {
+    width: 100%;
+    height: auto;
+    .mainRow {
+      margin-top: 110px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .packages {
+        width: 100%;
+        height: auto;
+        padding: 8px;
+      }
+    }
+  }
+}
 </style>

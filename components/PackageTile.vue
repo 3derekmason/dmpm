@@ -66,4 +66,10 @@ export default {
   cursor: pointer;
   transition: 0.1s;
 }
+
+@media (max-width: 800px) {
+  .tile {
+    width: 100%;
+  }
+}
 </style>

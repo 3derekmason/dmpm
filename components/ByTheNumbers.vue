@@ -74,4 +74,9 @@ ul {
     }
   }
 }
+@media (max-width: 800px) {
+  .stats {
+    width: 100%;
+  }
+}
 </style>

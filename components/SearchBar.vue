@@ -49,12 +49,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h1 {
-  margin-left: 16px;
-  font-family: 'Red Hat Mono', monospace;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-}
 .searchBar {
   background: #fafafa;
   width: 100vw;
@@ -95,6 +89,20 @@ h1 {
       font-size: 0.875rem;
       margin-right: 40px;
       cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  img {
+    width: 64px;
+    margin-left: 16px;
+  }
+  .search {
+    button {
+      width: 88px;
+      font-size: 0.6rem;
+      margin-right: 16px;
     }
   }
 }
