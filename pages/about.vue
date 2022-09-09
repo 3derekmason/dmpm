@@ -108,4 +108,10 @@ export default {
     }
   }
 }
+
+@media (max-width: 600px) {
+  img {
+    width: 40px;
+  }
+}
 </style>
