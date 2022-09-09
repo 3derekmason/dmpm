@@ -21,7 +21,7 @@
             :github="item.githubURL"
           />
         </div>
-        <DiscoverPackages :filterPackages="filterPackages" />
+        <DiscoverPackages :searchPackages="searchPackages" />
         <ByTheNumbers :packages="packages" />
       </div>
     </div>
@@ -55,12 +55,10 @@ export default {
     search() {
       return this.$store.state.search
     },
-    filter() {
-      return this.$store.state.filter
-    },
   },
   mounted() {
     this.getAllPackages()
+    this.setSearch('')
   },
   methods: {
     getAllPackages() {
@@ -72,30 +70,16 @@ export default {
         })
     },
     searchPackages() {
-      if (!this.search) {
-        this.getAllPackages()
-      } else {
-        const filtered = []
-        this.packages.forEach((item) => {
-          if (JSON.stringify(item).includes(this.search)) {
-            filtered.push(item)
-          }
-          this.packages = filtered
-        })
-      }
-    },
-    filterPackages() {
       const filtered = []
       this.allPackages.forEach((item) => {
-        if (item.tags.includes(this.filter)) {
+        if (JSON.stringify(item).includes(this.search)) {
           filtered.push(item)
         }
+        this.packages = filtered
       })
-      this.packages = filtered
     },
     ...mapMutations({
       setSearch: 'setSearch',
-      setFilter: 'setFilter',
     }),
   },
 }

@@ -4,7 +4,7 @@
     <div class="search">
       <input
         type="text"
-        placeholder="Search packages..."
+        :placeholder="search || 'Search packages...'"
         @input="handleChange"
       />
       <button @click="searchPackages">Search</button>

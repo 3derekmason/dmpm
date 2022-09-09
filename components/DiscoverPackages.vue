@@ -18,10 +18,10 @@ import { mapMutations } from 'vuex'
 export default {
   name: 'DiscoverPackages',
   props: {
-    filterPackages: {
+    searchPackages: {
       type: Function,
       default: () => {
-        return this.filter
+        return this.search
       },
     },
   },
@@ -36,17 +36,17 @@ export default {
     }
   },
   computed: {
-    filter() {
-      return this.$store.state.filter
+    search() {
+      return this.$store.state.search
     },
   },
   methods: {
     ...mapMutations({
-      setFilter: 'setFilter',
+      setSearch: 'setSearch',
     }),
     handleClick(string) {
-      this.setFilter(string)
-      this.filterPackages()
+      this.setSearch(string.toLowerCase())
+      this.searchPackages()
     },
   },
 }
