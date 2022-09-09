@@ -51,6 +51,11 @@ $grad: linear-gradient(35deg, #ff9800, #ff5722, #ff6f00, #ffc107);
       align-items: center;
       gap: 16px;
     }
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #d50000;
+    }
   }
 }
 
