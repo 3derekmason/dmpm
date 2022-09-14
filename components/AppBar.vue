@@ -8,7 +8,9 @@
       <div v-if="$route.path !== '/about'">
         <NuxtLink to="/about">About </NuxtLink>
       </div>
-      <NuxtLink to="/"><img src="/dmpm.png" alt="logo" width="32" /></NuxtLink>
+      <NuxtLink to="/"
+        ><img src="/dmpm.png" alt="dmpm d logo" width="32"
+      /></NuxtLink>
     </span>
   </div>
 </template>

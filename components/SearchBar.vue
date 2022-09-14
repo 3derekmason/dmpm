@@ -1,6 +1,8 @@
 <template>
   <div class="searchBar">
-    <NuxtLink to="/"> <img src="/dmpmword.png" width="120" /></NuxtLink>
+    <NuxtLink to="/" name="home">
+      <img src="/dmpmword.png" alt="dmpm-logo" width="120"
+    /></NuxtLink>
     <div class="search">
       <input
         type="text"
