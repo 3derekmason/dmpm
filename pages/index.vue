@@ -124,7 +124,6 @@ body {
       height: 70%;
       width: 100%;
       display: flex;
-      border-bottom: 0.5px solid #21212140;
 
       .packages {
         width: 40%;
