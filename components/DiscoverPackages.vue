@@ -1,6 +1,6 @@
 <template>
   <div class="discover">
-    <h3><span class="material-icons">pageview</span>Discover packages</h3>
+    <h2><span class="material-icons">pageview</span>Discover packages</h2>
     <div class="filters">
       <span v-for="(item, i) in filters" :key="i">
         <button @click="handleClick(item.name)">
@@ -58,7 +58,7 @@ export default {
   padding: 16px;
   height: 100%;
 
-  h3 {
+  h2 {
     font-weight: 300;
     font-size: 18px;
     width: 100%;

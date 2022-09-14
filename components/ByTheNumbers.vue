@@ -1,14 +1,14 @@
 <template>
   <div class="stats">
-    <h3><span class="material-icons">analytics</span>By the numbers</h3>
+    <h2><span class="material-icons">analytics</span>By the numbers</h2>
     <ul>
       <li>
         <p>Packages</p>
-        <h2>{{ packages.length }}</h2>
+        <h3>{{ packages.length }}</h3>
       </li>
       <li>
         <p>Downloads</p>
-        <h2>{{ getTotal(packages) }}</h2>
+        <h3>{{ getTotal(packages) }}</h3>
       </li>
     </ul>
   </div>
@@ -47,7 +47,7 @@ ul {
   padding: 16px;
   height: 100%;
 
-  h3 {
+  h2 {
     font-weight: 300;
     font-size: 18px;
     width: 100%;
@@ -66,7 +66,7 @@ ul {
       margin: 0;
       font-weight: 200;
     }
-    h2 {
+    h3 {
       font-size: 32px;
       font-weight: 300;
       margin: 0;

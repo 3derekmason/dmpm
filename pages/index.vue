@@ -1,31 +1,33 @@
 <template>
-  <div class="home">
-    <AppBar />
-    <SearchBar :searchPackages="searchPackages" />
-    <div class="homeView">
-      <div class="mainRow">
-        <div v-if="packages" class="packages">
-          <h3 v-if="!search">
-            <span class="material-icons"> library_books </span>Libraries
-          </h3>
-          <h3 v-else>
-            <span class="material-icons"> library_books </span>Filtered
-            Libraries
-          </h3>
-          <PackageTile
-            v-for="(item, i) in packages"
-            :key="i"
-            :name="item.name"
-            :version="item.version"
-            :npm="item.npmURL"
-            :github="item.githubURL"
-          />
+  <main>
+    <div class="home">
+      <AppBar />
+      <SearchBar :searchPackages="searchPackages" />
+      <div class="homeView">
+        <div class="mainRow">
+          <div v-if="packages" class="packages">
+            <h2 v-if="!search">
+              <span class="material-icons"> library_books </span>Libraries
+            </h2>
+            <h2 v-else>
+              <span class="material-icons"> library_books </span>Filtered
+              Libraries
+            </h2>
+            <PackageTile
+              v-for="(item, i) in packages"
+              :key="i"
+              :name="item.name"
+              :version="item.version"
+              :npm="item.npmURL"
+              :github="item.githubURL"
+            />
+          </div>
+          <DiscoverPackages :searchPackages="searchPackages" />
+          <ByTheNumbers :packages="packages" />
         </div>
-        <DiscoverPackages :searchPackages="searchPackages" />
-        <ByTheNumbers :packages="packages" />
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -93,7 +95,7 @@ body {
   padding: 0;
   font-family: 'Poppins', sans-serif;
 
-  h3 {
+  h2 {
     padding-bottom: 16px;
   }
 }
@@ -129,7 +131,7 @@ body {
         padding: 16px;
         overflow: auto;
 
-        h3 {
+        h2 {
           font-weight: 300;
           font-size: 18px;
           width: 100%;
