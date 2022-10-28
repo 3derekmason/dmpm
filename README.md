@@ -12,10 +12,10 @@ One of the following versions of [Node.js](https://nodejs.org/en/download/) must
 
 ### Usage
 
-All `dmpm` packages can be run with `npm`.
+All `dmpm` packages can be installed with `npm`.
 
 ```bash
-npm <command>
+npm i <command>
 ```
 
 ### Links and resources
