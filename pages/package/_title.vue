@@ -46,6 +46,9 @@
       <div class="info">
         <div class="block">
           <code>npm i {{ currentPackage.name }}</code>
+          <button class="install" @click="copyInstallText">
+            <span class="material-icons">content_copy</span>
+          </button>
         </div>
         <div class="block">
           <p>Version</p>
@@ -78,6 +81,7 @@ export default {
     return {
       currentPackage: {},
       path: '',
+      installCode: '',
     }
   },
   async mounted() {
@@ -91,7 +95,15 @@ export default {
         .then((res) => res.json())
         .then((data) => {
           this.currentPackage = JSON.parse(data)
+          this.installCode = 'npm i ' + JSON.parse(data).name
         })
+    },
+    async copyInstallText() {
+      try {
+        await navigator.clipboard.writeText(this.installCode)
+      } catch ($e) {
+        alert($e)
+      }
     },
   },
 }
@@ -210,6 +222,18 @@ export default {
           border-bottom: 1px solid #d50000;
         }
       }
+    }
+
+    .install {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .install:hover {
+      color: #d50000;
+    }
+    .install:active {
+      opacity: 0.5;
     }
 
     .info {
